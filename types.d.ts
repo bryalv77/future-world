@@ -14,3 +14,9 @@ type ProductType = {
   tags: string;
   images: { src: string }[];
 };
+
+type CollectionType = {
+  id: string;
+  title: string;
+  handle: string;
+};

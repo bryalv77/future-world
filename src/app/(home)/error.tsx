@@ -2,23 +2,25 @@
 
 import { useEffect } from "react";
 
-export default function Error(props: ErrorProps) {
-  const { reset, error } = props;
+interface ErrorProps {
+  error: Error;
+  reset: () => void;
+}
 
+export default function Error({ error, reset }: ErrorProps) {
   useEffect(() => {
-    console.error(error);
+    console.log(error);
   }, []);
 
   return (
-    <div style={{ padding: "10rem" }}>
+    <div
+      style={{
+        padding: "10rem",
+      }}
+    >
       <h1>:c</h1>
-      <p>An error has ocurred</p>
-      <button
-        style={{ background: "transparent", border: "none" }}
-        onClick={reset}
-      >
-        Intentar de nuevo
-      </button>
+      <p>Ha ocurrido un error</p>
+      <button onClick={reset}>Intentar de nuevo</button>
     </div>
   );
 }
